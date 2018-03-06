@@ -1,0 +1,8 @@
+{
+  "name": "helpmemovemyboat",
+  "app_id": "d4f323ea",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
