@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
+import { MapPage } from '../pages/map/map';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -11,10 +11,16 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { PubNubAngular } from 'pubnub-angular2';
+
+import { BackgroundGeolocation,BackgroundGeolocationConfig } from '@ionic-native/background-geolocation';
+import { Geolocation, Geoposition } from '@ionic-native/geolocation';
+import { LocationTracker } from '../providers/location-tracker';
+
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    MapPage,
     ContactPage,
     HomePage,
     TabsPage
@@ -26,7 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    MapPage,
     ContactPage,
     HomePage,
     TabsPage
@@ -34,7 +40,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    PubNubAngular,
+    LocationTracker,
+    BackgroundGeolocation,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
+
+
