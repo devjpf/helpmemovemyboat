@@ -11,11 +11,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { PubNubAngular } from 'pubnub-angular2';
-
 import { BackgroundGeolocation,BackgroundGeolocationConfig } from '@ionic-native/background-geolocation';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation';
 import { LocationTracker } from '../providers/location-tracker';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +26,7 @@ import { LocationTracker } from '../providers/location-tracker';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,7 +39,6 @@ import { LocationTracker } from '../providers/location-tracker';
   providers: [
     StatusBar,
     SplashScreen,
-    PubNubAngular,
     LocationTracker,
     BackgroundGeolocation,
     Geolocation,
@@ -48,5 +46,3 @@ import { LocationTracker } from '../providers/location-tracker';
   ]
 })
 export class AppModule {}
-
-

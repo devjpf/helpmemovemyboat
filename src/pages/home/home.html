@@ -1,27 +1,36 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title text-center>Track</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content>
-  <h3>Current Latitude: {{locationTracker.lat}}</h3>
-  <h3>Current Longitude: {{locationTracker.lng}}</h3>
-  <button ion-button full primary (click)="start()">Start Tracking</button>
-  <button ion-button full primary (click)="stop()">Stop Tracking</button>
+<ion-content class="vertical-align-content" text-center>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button outline color="secondary" icon-only large (click)="start()">
+              <ion-icon name="md-navigate"></ion-icon>
+            </button>
+          </ion-col>
+
+    </ion-row>
+
+        <ion-row style="padding-top: 2em; padding-bottom: 2em">
+          <ion-col>
+          <h4>Latitude: {{locationTracker.lat}}</h4>
+          <h4>Longitude: {{locationTracker.lng}}</h4>
+            </ion-col>
+      </ion-row>
+
+      <ion-row center>
+        <ion-col>
+
+          <button ion-button outline color="danger" icon-only large (click)="stop()">
+                <ion-icon name="md-hand"></ion-icon>
+              </button>
+          </ion-col>
+      </ion-row>
+
+      </ion-grid>
 </ion-content>
-
-<!--ion-content padding>
-
-
-    <ion-grid style="height: 100%">
-  <ion-row justify-content-center align-items-center style="height: 100%">
-          Start tracking
-         <button ion-fab mini (click)='ngOnInit();'><ion-icon name="add"></ion-icon></button>
-
-  </ion-row>
-</ion-grid>
-
-
-</ion-content-->
